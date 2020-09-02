@@ -16,9 +16,9 @@ class RealmQuerys {
 
         realm.beginTransaction()
         val usuario:Usuario = realm.createObject(Usuario::class.java, idUsuario)
-        usuario.name = "Norman"
-        usuario.direction = "Direccion"
-        usuario.lastName = "Sánchez"
+        usuario.name = nombre
+        usuario.direction = apellido
+        usuario.lastName = adress
         realm.commitTransaction()
 
         return idUsuario

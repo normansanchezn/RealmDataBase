@@ -11,7 +11,8 @@ class BaseApplication : Application() {
         super.onCreate()
 
         Realm.init(this)
-        Realm.getInstance(getConfigurationRealm())
+        Realm.setDefaultConfiguration(getConfigurationRealm())
+        // Realm.getInstance(getConfigurationRealm())
     }
 
     fun getConfigurationRealm(): RealmConfiguration {

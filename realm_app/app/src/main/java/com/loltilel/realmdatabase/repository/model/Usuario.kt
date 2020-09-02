@@ -6,7 +6,7 @@ import io.realm.annotations.RealmClass
 import io.realm.annotations.Required
 
 @RealmClass
-class Usuario : RealmObject() {
+open class Usuario : RealmObject() {
     @PrimaryKey
     var id: Int = 0
     @Required
