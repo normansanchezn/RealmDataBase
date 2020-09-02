@@ -11,7 +11,7 @@ class BaseApplication : Application() {
         super.onCreate()
 
         Realm.init(this)
-        Realm.setDefaultConfiguration(getConfigurationRealm())
+        Realm.getInstance(getConfigurationRealm())
     }
 
     fun getConfigurationRealm(): RealmConfiguration {
@@ -36,7 +36,7 @@ class BaseApplication : Application() {
     fun generarIdAutonIncremental(id: Int): Int {
         val realm:Realm = Realm.getInstance(getConfigurationRealm())
         val idAutoIncremental: Int = when (id){
-            1 -> recuperarIdMaximo(realm, Usuario::class.java, "id")
+            Constantes().ID_ESQUEMA -> recuperarIdMaximo(realm, Usuario::class.java, "id")
             else -> -1
         }
 
